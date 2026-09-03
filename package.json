@@ -1,0 +1,17 @@
+{
+  "name": "voidgram-backend",
+  "version": "1.0.0",
+  "description": "Voidgram Social Network Backend Engine",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "stripe": "^13.10.0",
+    "firebase-admin": "^11.11.0",
+    "redis": "^4.6.10",
+    "pg": "^8.11.3"
+  }
+}
