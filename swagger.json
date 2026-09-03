@@ -1,0 +1,43 @@
+/* --- БЛОК 35/40: SWAGGER API SPECIFICATION --- */
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Voidgram REST API",
+    "version": "1.0.0",
+    "description": "API документація гібридної соціальної мережі Voidgram"
+  },
+  "paths": {
+    "/api/register": {
+      "post": {
+        "summary": "Реєстрація користувача з перевіркою Anti-RU",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": { "type": "string" },
+                  "phone": { "type": "string", "example": "+380991234567" },
+                  "isBusiness": { "type": "boolean" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Користувача створено" },
+          "403": { "description": "Гео-блокування (+7 / РФ)" }
+        }
+      }
+    },
+    "/api/create-subscription": {
+      "post": {
+        "summary": "Оформлення підписки ($1.5 або $49)",
+        "responses": {
+          "200": { "description": "Client Secret отримано" }
+        }
+      }
+    }
+  }
+}
